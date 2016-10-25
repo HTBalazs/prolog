@@ -41,6 +41,7 @@ Example:
 #include "prolog/pLogger.h"
 
 int main() {
+	pLogger::logfile = "sim.log";
 	pLogger::log<GRN>("Simple terminal log with green color.\n");
 	pLogger::logf<CYN>("Another one in cyan and file output.\n");
 	pLogger::warning_msg("This a yellow warning message placed in terminal only!\n");
