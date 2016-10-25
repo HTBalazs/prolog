@@ -9,6 +9,30 @@ cmake CMakeLists.txt
 make install
 ```
 
+Available colors:
+
+```
+#!text
+
+NRM : normal
+RED : red
+GRN : green
+YEL : yellow
+BLU : blue
+MAG : magenta
+CYN : cyan
+LGY : light gray
+DGY : dark gray
+LRD : light red
+LGN : light green
+LYW : light yellow
+LBL : light blue
+LMA : light magenta
+LCY : light cyan
+WHT : white
+```
+
+
 Example:
 
 ```
