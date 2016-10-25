@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 // Name:        pLogger.cpp
 // Purpose:     pLogger namespace
 // Author:      Balázs Tóth
@@ -28,3 +28,8 @@ char LBL[] = "\x1B[94m";
 char LMA[] = "\x1B[95m";
 char LCY[] = "\x1B[96m";
 char WHT[] = "\x1B[97m";
+
+namespace pLogger {
+	std::string logfile = "sim.log";
+	unsigned int max_warning = 10;
+}

@@ -11,13 +11,6 @@
 #ifndef _LOGGER_H_
 #define _LOGGER_H_
 
-#ifndef LOGFILE
-#define LOGFILE "sim.log"
-#endif //LOGFILE
-#ifndef MAX_WARNING
-#define MAX_WARNING 10
-#endif //MAX_WARNING
-
 #include <iostream>
 #include <fstream>
 #include <memory>
@@ -50,13 +43,16 @@ extern char WHT[];	// white
 /** This namespace contains functions to place logs to terminal/prompt and file.
 */
 namespace pLogger {
+	extern std::string logfile;
+	extern unsigned int max_warning;
+
 	inline bool already_written() {
 		static bool written = false;
 		return written++;
 	}
 
 	inline void to_file(char const* fmt, va_list args) {
-		pFile file{LOGFILE, already_written()?"a":"w"};
+		pFile file{logfile.c_str(), already_written()?"a":"w"};
 		file.vfprint(fmt, args);
 	}
 
@@ -145,7 +141,7 @@ namespace pLogger {
 	inline void warning_msgf(char const* fmt, ...) {
 		static int counter = 0;
 		counter++;
-		if(MAX_WARNING<counter) {
+		if(max_warning<counter) {
 			error_msgf("Maximum allowable warning messages were reached.\n");
 		}
 		logf<YEL>("  WARNING: ");
@@ -161,7 +157,7 @@ namespace pLogger {
 	inline void warning_msg(char const* fmt, ...) {
 		static int counter = 0;
 		counter++;
-		if(MAX_WARNING<counter) {
+		if(max_warning<counter) {
 			error_msg("Maximum allowable warning messages were reached.\n");
 		}
 		log<YEL>("  WARNING: ");
@@ -284,6 +280,4 @@ namespace pLogger {
 	}
 }
 
-#undef LOGFILE
-#undef MAX_WARNING
 #endif //_LOGGER_H_
