@@ -1,6 +1,6 @@
 This is a colorful tiny logger tool which is easy to use for terminal and log-file output.
 
-Install:
+# Install: #
 
 ```
 #!shell
@@ -9,7 +9,7 @@ cmake CMakeLists.txt
 make install
 ```
 
-Available colors:
+# Available colors: #
 
 ```
 #!text
@@ -33,7 +33,7 @@ WHT : white
 ```
 
 
-Example:
+# Example: #
 
 ```
 #!c++
@@ -52,11 +52,11 @@ int main() {
 // g++ -std=c++11 -I /usr/include main.cpp -o main /usr/lib/prolog/libprolog.a
 ```
 
-Output:
+# Output: #
 
 ![terminal_log.png](https://bitbucket.org/repo/bEXdEz/images/1477975845-terminal_log.png)
 
-sim.log:
+# sim.log: #
 
 ```
 #!text
