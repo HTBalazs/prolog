@@ -241,7 +241,7 @@ namespace pLogger {
 				counter = 0;
 			}
 			timer->tac();
-			float difference = timer->get_difference();
+			float difference = timer->get_difference().count();
 			float fps = difference==0?0:(float)substeps/difference;
 			struct tm est_end = timer->get_estimated_finish(progress);
 			logf<WHT>(" %5i   %1.3e      %5i      %6i   %.3f   %06.2f   %02i.%02i.%4i %02i:%02i\n", steps, (double)dt, substeps, all_steps, (double)current_time, (double)fps, est_end.tm_mday, est_end.tm_mon+1, est_end.tm_year+1900, est_end.tm_hour, est_end.tm_min);
