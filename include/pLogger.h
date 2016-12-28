@@ -48,7 +48,11 @@ namespace pLogger {
 
 	inline bool already_written() {
 		static bool written = false;
-		return written++;
+		if(!written) {
+			written = true;
+			return false;
+		}
+		return true;
 	}
 
 	inline void to_file(char const* fmt, va_list args) {
