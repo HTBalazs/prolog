@@ -20,6 +20,10 @@
 #include "pTimer.h"
 #include "pFile.h"
 
+#if defined(__linux__) || defined(__APPLE__)
+#define USECOLOURS
+#endif // __linux__ __APPLE__
+
 /** Global declaration of colors.
 */
 extern char NRM[]; 	// normal
@@ -61,17 +65,17 @@ namespace pLogger {
 	}
 
 	template <char const* color> void log(char const* fmt, va_list args) {
-	#ifdef __linux__
+	#ifdef __APPLE__
 		printf("%s", color);
-	#endif // __linux__
+	#endif // __APPLE__
 		vprintf(fmt, args);
-	#ifdef __linux__
+	#ifdef __APPLE__
 		printf("%s", NRM);
-	#endif // __linux__
+	#endif // __APPLE__
 	}
 
 	template <char const* color> void logf(char const* fmt, ...) {
-	    va_list args;		
+	    va_list args;
 		va_start(args, fmt);
 		log<color>(fmt, args); // 4
 		va_end(args);

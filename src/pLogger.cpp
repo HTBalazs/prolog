@@ -12,22 +12,22 @@
 
 /** Global definition of colors.
 */
-char NRM[] = "\x1B[0m";
-char RED[] = "\x1B[31m";
-char GRN[] = "\x1B[32m";
-char YEL[] = "\x1B[33m";
-char BLU[] = "\x1B[34m";
-char MAG[] = "\x1B[35m";
-char CYN[] = "\x1B[36m";
-char LGY[] = "\x1B[37m";
-char DGY[] = "\x1B[90m";
-char LRD[] = "\x1B[91m";
-char LGN[] = "\x1B[92m";
-char LYW[] = "\x1B[93m";
-char LBL[] = "\x1B[94m";
-char LMA[] = "\x1B[95m";
-char LCY[] = "\x1B[96m";
-char WHT[] = "\x1B[97m";
+char NRM[] = "\033[0m";
+char RED[] = "\033[31m";
+char GRN[] = "\033[32m";
+char YEL[] = "\033[33m";
+char BLU[] = "\033[34m";
+char MAG[] = "\033[35m";
+char CYN[] = "\033[36m";
+char LGY[] = "\033[37m";
+char DGY[] = "\033[90m";
+char LRD[] = "\033[91m";
+char LGN[] = "\033[92m";
+char LYW[] = "\033[93m";
+char LBL[] = "\033[94m";
+char LMA[] = "\033[95m";
+char LCY[] = "\033[96m";
+char WHT[] = "\033[97m";
 
 namespace pLogger {
 	std::string logfile = "sim.log";
