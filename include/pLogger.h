@@ -65,13 +65,10 @@ namespace pLogger {
 	}
 
 	template <char const* color> void log(char const* fmt, va_list args) {
-	#ifdef __APPLE__
+	#ifdef USECOLOURS
 		printf("%s", color);
-	#endif // __APPLE__
+	#endif //USECOLOURS
 		vprintf(fmt, args);
-	#ifdef __APPLE__
-		printf("%s", NRM);
-	#endif // __APPLE__
 	}
 
 	template <char const* color> void logf(char const* fmt, ...) {
