@@ -49,6 +49,7 @@ extern char WHT[];	// white
 namespace pLogger {
 	extern std::string logfile;
 	extern unsigned int max_warning;
+	extern unsigned int warning_counter;
 
 	inline bool already_written() {
 		static bool written = false;
@@ -144,9 +145,8 @@ namespace pLogger {
 	}
 
 	inline void warning_msgf(char const* fmt, ...) {
-		static int counter = 0;
-		counter++;
-		if(max_warning<counter) {
+		warning_counter++;
+		if(max_warning<warning_counter) {
 			error_msgf("Maximum allowable warning messages were reached.\n");
 		}
 		logf<YEL>("  WARNING: ");
@@ -160,9 +160,8 @@ namespace pLogger {
 	}
 
 	inline void warning_msg(char const* fmt, ...) {
-		static int counter = 0;
-		counter++;
-		if(max_warning<counter) {
+		warning_counter++;
+		if(max_warning<warning_counter) {
 			error_msg("Maximum allowable warning messages were reached.\n");
 		}
 		log<YEL>("  WARNING: ");
