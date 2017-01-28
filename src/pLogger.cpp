@@ -32,5 +32,5 @@ char WHT[] = "\033[97m";
 namespace pLogger {
 	std::string logfile = "sim.log";
 	unsigned int max_warning = 10;
-	unsigned int warning_counter = 10;
+	unsigned int warning_counter = 0;
 }
