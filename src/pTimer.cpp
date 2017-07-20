@@ -67,7 +67,7 @@ struct tm pTimer::get_current() const {
 /// Returns the estimated end date based on the object creation and the progress.
 /////////////////////////////////////////////////////////////////////////////////////////
 struct tm pTimer::get_estimated_finish(float const& progress) {
-	if(progress<1e-2f) {
+	if(progress<0.01) {
 		return *localtime(&start);
 	}
 	time_t current_time;

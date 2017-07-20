@@ -34,7 +34,6 @@
 #define USECOLOURS
 #endif // __linux__ __APPLE__
 
-
 namespace ProLog {
 	/** Global declaration of colors.
 	*/
