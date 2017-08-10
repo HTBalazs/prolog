@@ -40,14 +40,16 @@ void pTimer::tic() {
 /// Sets the timer (end) to the current time.
 /////////////////////////////////////////////////////////////////////////////////////////
 void pTimer::tac() {
-	end_tick = std::chrono::system_clock::now();
-	ticked = false;
+	if(ticked){
+		end_tick = std::chrono::system_clock::now();
+		ticked = false;
+	}
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Returns the difference between start and end in seconds
 /////////////////////////////////////////////////////////////////////////////////////////
 std::chrono::duration<double> pTimer::get_difference() const {
-	return (end_tick-start_tick);
+	return ticked ? (start_tick-start_tick) : (end_tick-start_tick);
 }
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Returns the date of the object creation.
