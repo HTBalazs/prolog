@@ -6,7 +6,7 @@ This is a colorful tiny logger tool which is easy to use for terminal and log-fi
 #!shell
 
 cmake CMakeLists.txt
-make install
+sudo make install
 ```
 
 # Available colors: #
