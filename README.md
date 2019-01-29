@@ -49,7 +49,7 @@ int main() {
 	pLogger::error_msgf("This a red error message with termination.\n");
 	return 0;
 }
-// g++ -std=c++11 -I /usr/include main.cpp -o main /usr/lib/prolog/libprolog.a
+// g++ -std=c++11 -I /usr/local/include main.cpp -o main /usr/local/lib/prolog/libprolog.a
 ```
 
 # Output: #
