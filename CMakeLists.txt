@@ -11,8 +11,8 @@ file(GLOB SOURCES "src/*.cpp")
 file(GLOB INCLUDES "include/*.h")
 
 # Define library and include directories
-set(STATIC_LIB_DIR /usr/local/lib/prolog)
-set(INCLUDE_DIR /usr/local/include/prolog)
+set(STATIC_LIB_DIR ~/local/lib/prolog)
+set(INCLUDE_DIR ~/local/include/prolog)
 
 # set archive output to <project_directory>/lib
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY lib/)
